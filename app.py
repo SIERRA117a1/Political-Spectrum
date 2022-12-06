@@ -9,7 +9,7 @@ from tensorflow import keras
 #classifier = pickle.load(open('D:\Mini Project\Political Spectrum\model.pkl', 'rb'))
 #C:\Users\Administrator\Desktop\Mini Project\Political Spectrum\model.pkl
 #classifier = joblib.load(open(r'D:\Mini Project\Political Spectrum\model.pkl', 'rb'))
-classiifer = keras.models.load_model('D:\Mini Project\Political Spectrum\model')
+classiifer = keras.models.load_model('\model\')
 def welcome():
 	return 'welcome all'
 
