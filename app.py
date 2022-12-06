@@ -3,7 +3,6 @@ import numpy as np
 import pickle
 import streamlit as st
 from PIL import Image
-import joblib
 from tensorflow import keras
 
 # loading in the model to predict on the data
