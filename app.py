@@ -4,13 +4,14 @@ import pickle
 import streamlit as st
 from PIL import Image
 import xgboost
+from sklearn.pipeline import Pipeline
 
 
 # loading in the model to predict on the data
 #classifier = pickle.load(open('D:\Mini Project\Political Spectrum\model.pkl', 'rb'))
 #C:\Users\Administrator\Desktop\Mini Project\Political Spectrum\model.pkl
 #classifier = joblib.load(open(r'D:\Mini Project\Political Spectrum\model.pkl', 'rb'))
-classifier = pickle.load(open('pipe.pkl', 'rb'))
+classifier = pickle.load(open('D:\Mini Project\Political Spectrum\pipe.pkl', 'rb'))
 def welcome():
 	return 'welcome all'
 
@@ -19,12 +20,13 @@ def welcome():
 def prediction(text):
 	
 	prediction = classifier.predict(
-		[[text]])
+		[text])
 	print(prediction)
 	return prediction
 	
 
 # this is the main function in which we define our webpage
+
 def main():
 	# giving the webpage a title
 	st.title("Poltical Spectrum Classifier")
@@ -50,8 +52,16 @@ def main():
 	# the below line ensures that when the button called 'Predict' is clicked,
 	# the prediction function defined above is called to make the prediction
 	# and store it in the variable result
-	if st.button("Predict"):
+	if st.button("Predict") & len(text)>0:
 		result = prediction(text)
+	
+	if result == 0:
+		result = ' Neutral'
+	elif result == 1:
+		result = ' Left'
+	elif result == 2:
+		result = ' Right'
+	
 	st.success('The output is {}'.format(result))
 	
 if __name__=='__main__':
