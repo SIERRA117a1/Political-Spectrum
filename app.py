@@ -11,7 +11,7 @@ from sklearn.pipeline import Pipeline
 #classifier = pickle.load(open('D:\Mini Project\Political Spectrum\model.pkl', 'rb'))
 #C:\Users\Administrator\Desktop\Mini Project\Political Spectrum\model.pkl
 #classifier = joblib.load(open(r'D:\Mini Project\Political Spectrum\model.pkl', 'rb'))
-classifier = pickle.load(open('D:\Mini Project\Political Spectrum\pipe.pkl', 'rb'))
+classifier = pickle.load(open('pipe.pkl', 'rb'))
 def welcome():
 	return 'welcome all'
 
