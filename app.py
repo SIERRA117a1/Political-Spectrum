@@ -56,13 +56,13 @@ def main():
 		result = prediction(text)
 	
 	if result == 0:
-		result = ' Neutral'
+		result = ' Neutral Views'
 	elif result == 1:
-		result = ' Left'
+		result = ' Leftist Views'
 	elif result == 2:
-		result = ' Right'
+		result = ' Rightist Views'
 	
-	st.success('The output is {}'.format(result))
+	st.success('The given statement inclines to {}'.format(result))
 	
 if __name__=='__main__':
 	main()
